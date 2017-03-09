@@ -1,0 +1,21 @@
+# create new virtualenviorment, I want to use python3
+mkvirtualenv -p python3 spark
+
+# add py4j
+workon spark
+pip install py4j
+
+# get location of spark download
+user/aaronmyhre/spark-2.1.0
+
+# add spark to enviorment variables
+open .bash_profile
+add the following:
+  export SPARK_HOME=$HOME/spark-2.1.0
+  export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+  export PATH=$PATH:$SPARK_HOME/bin
+source ~/.bash_profile
+
+# check that pyspark is aviliable from python
+python
+import pyspark

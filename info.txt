@@ -1,0 +1,8 @@
+What is it?
+Apache Spark is an open-source cluster-computing framework
+
+Resources:
+http://spark.apache.org/ - Apache homepage for spark
+http://spark.apache.org/downloads.html - download page
+http://spark.apache.org/docs/latest/quick-start.html - Quick start guide
+http://spark.apache.org/docs/latest/programming-guide.html#transformations - Transformations

@@ -1,0 +1,32 @@
+# Mostly taken from the quick start Spark guide, available here: http://spark.apache.org/docs/latest/quick-start.html
+
+# Download spark from doanloads page and unzip
+cd *spark folder*
+
+# Start interactive spark python session
+./bin/pyspark
+
+# Create new Resilient Distributed Dataset (RDD), this is the object we will perform operations on. This can be taken from other sources such as
+# Hadoop, but we will start by taking it from a text.
+# sc - sparkContext Object
+textFile = sc.textFile("README.md")
+
+# simple aggregations
+textFile.count()
+textFile.first()
+
+# filer using lambda
+linesWithLegal = textFile.filter(lambda line: "legal" in line)
+linesWithLegal.count()
+
+# combine aggrigation function with filter
+textFile.filter(lambda line: "Prohibited" in line).count()
+
+
+### MapReduce
+1. most common letter
+a. split lines into words # use map transformation
+b. use count to get count of each
+c. use max()
+
+textFile.map(lambda line: line.split()).count().max()
